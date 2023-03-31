@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VariableS
-{
-    internal class Program
-    {
-        static void Main()
-        {
-            const string MyName = "Dima";
-            Console.WriteLine(5);
-            Console.WriteLine('\x7F');
-            Console.WriteLine('\x7F');
+namespace VariableS{
+    internal class Program{
+        static void Main(){
+            string _myName = "Dima";
+            int _age = 10;
+            bool _pet = true;
+            double _size = 39.5;
+
+
+            Console.WriteLine($"My name is {_myName}");
+            Console.WriteLine($"My age is {_age}");
+            Console.WriteLine($"Do i have a Pet? {_pet}");
+            Console.WriteLine($"My shoe size is {_size}");
+
             Console.ReadKey();
         }
     }
