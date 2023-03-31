@@ -10,7 +10,7 @@ namespace VariableS
     {
         static void Main()
         {
-            const string MyName = "Dimaeeee";
+            const string MyName = "Dima";
             Console.WriteLine(5);
             Console.WriteLine('\x7F');
             Console.WriteLine('\x7F');
