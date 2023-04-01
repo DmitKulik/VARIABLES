@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace VariableS{
     internal class Program{
         static void Main(){
+          
 
             string _myName = "Dima";
             int _age = 10; //лучше byte
             bool _pet = true;
             double _size = 39.5;
+
+
+
 
 
             Console.WriteLine($"My name is {_myName}");
@@ -23,9 +28,21 @@ namespace VariableS{
             Console.WriteLine("floatMax {0} ", float.MaxValue);
 
             Console.ReadKey();
-           
+          
 
         }
+
+
+        enum Semaphore : int
+        {
+            Red = 100,
+            Yellow = 200,
+            Green = 300
+
+        }
+
+
+
 
     }
 }
