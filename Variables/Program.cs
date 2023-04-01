@@ -18,11 +18,13 @@ namespace VariableS{
             Console.WriteLine($"My age is {_age}");
             Console.WriteLine($"Do i have a Pet? {_pet}");
             Console.WriteLine($"My shoe size is {_size}");
-
+            Console.BackgroundColor = ConsoleColor.Blue;
             Console.WriteLine("floatMin {0} ", float.MinValue);
             Console.WriteLine("floatMax {0} ", float.MaxValue);
 
             Console.ReadKey();
+           
+
         }
 
     }
