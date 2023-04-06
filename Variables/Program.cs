@@ -7,9 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace VariableS{
-    internal class Program{
-        static void Main(){
+     public class Program{
 
+        static void Main(){
+            Class4Blok blok = new Class4Blok();
+            blok.Blok();   
 
             /*string _myName = "Dima";
             int _age = 10; //лучше byte
@@ -22,7 +24,7 @@ namespace VariableS{
             //string _str = Console.ReadLine();
 
             //Финальная практика модуля «Анкетируем пользователей»
-            Console.Write("Enter your name: ");
+            /*Console.Write("Enter your name: ");
             string name = Console.ReadLine();
             Console.Write("Enter your age: ");
             byte age = checked((byte)int.Parse(Console.ReadLine()));
@@ -31,7 +33,7 @@ namespace VariableS{
             Console.Write("Enter your birthdate: ");
             var birthdate = DateTime.Parse(Console.ReadLine());
             Console.WriteLine("Your name is {0} Age is {1} Favorite day is {2} and birthdate {3}", name, age, day, birthdate);
-            Console.ReadKey();
+            Console.ReadKey();*/
 
 
             // Console.WriteLine("Имя {0},\nВозраст {1}\nЛюбимый цвет {2}", _myName, _age, _favcolor);
@@ -46,11 +48,11 @@ namespace VariableS{
             */
 
 
-           // double result3 = 10 % 3;
-           //Console.WriteLine(result3);
+            // double result3 = 10 % 3;
+            //Console.WriteLine(result3);
 
-           // Console.ReadKey();
-          
+            // Console.ReadKey();
+
 
         }
 
@@ -62,7 +64,6 @@ namespace VariableS{
             Wednesday = 300
 
         }
-
 
 
 
