@@ -61,8 +61,8 @@ namespace VariableS {
                 Console.WriteLine("Your color is cyan!");
             }
 
-            switch (color) //Задание Задание 4.1.17
-            {
+            switch (color) { //Задание Задание 4.1.17
+                           
                 case "red":
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.ForegroundColor = ConsoleColor.Black;
@@ -86,9 +86,6 @@ namespace VariableS {
             }
 
         }
-
-
-
 
     }
 }
