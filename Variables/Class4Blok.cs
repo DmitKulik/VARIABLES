@@ -144,7 +144,7 @@ namespace VariableS {
                         Console.WriteLine("Your color is yellow!");
                         break;
                 }
-            }*/
+            }
 
             Console.WriteLine("Цикл while");
             int k = 0;
@@ -177,9 +177,32 @@ namespace VariableS {
                         
 
                 }
+                k++;
+            }
+            Console.WriteLine("Введите свое имя:");
+            var name = Console.ReadLine();
+            Console.WriteLine("Ваше имя по буквам:");
+            for (var y = name.Length - 1; y >= 0; y--) {
+                Console.Write(name[y] + " ");// тут важно указать имя массива иначе возьмет индексы
                 
             }
-            k++;
+            //Console.WriteLine("Первая буква вашего имени: {0}", name[0]);
+            Console.ReadKey();
+            */
+
+          
+            int[,] name = { { 1, 2, 3 }, { 5, 6, 7 } };
+
+            for (int i = 0; i < name.GetUpperBound(0) + 1; i++)
+            {
+                for (int k = 0; k < name.GetUpperBound(1) + 1; k++)
+                    Console.Write(name[i, k] + " ");
+
+                Console.WriteLine();
+            }// тут важно указать имя массива иначе возьмет индексы
+
+            //Console.WriteLine("Первая буква вашего имени: {0}", name[0]);
+            Console.ReadKey();
         }
 
     }
