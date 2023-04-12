@@ -227,7 +227,7 @@ namespace VariableS {
 
             Console.ReadKey();
              
-            //    Задание 4.3.13
+            //    Задание 4.3.13/
 
             var arr = new int[] { 5, 6, 9, 1, 2, 390, 4 };
             int sum = arr.Sum();
