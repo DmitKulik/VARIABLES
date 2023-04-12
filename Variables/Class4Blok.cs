@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -188,22 +189,68 @@ namespace VariableS {
             }
             //Console.WriteLine("Первая буква вашего имени: {0}", name[0]);
             Console.ReadKey();
-            */
+            
 
-          
-            int[,] name = { { 1, 2, 3 }, { 5, 6, 7 } };
+            //выводим все элементы двумерного массива, первый цикл столбцы вложенный цикл строки
+            //перевернуть можно
+            int[,] name = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 0 } };
 
-            for (int i = 0; i < name.GetUpperBound(0) + 1; i++)
+            for (int i = 0; i < name.GetUpperBound(1) + 1; i++)
             {
-                for (int k = 0; k < name.GetUpperBound(1) + 1; k++)
-                    Console.Write(name[i, k] + " ");
+                for (int k = 0; k < name.GetUpperBound(0) + 1; k++)
+                    Console.Write(name[k, i] + " ");
 
                 Console.WriteLine();
             }// тут важно указать имя массива иначе возьмет индексы
 
             //Console.WriteLine("Первая буква вашего имени: {0}", name[0]);
+           
+            // Задание 4.3.12
+
+            int yoo;
+            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
+            for (int i = 0; i < arr.Length - 1; i++) {
+                for (int j = i + 1; j < arr.Length; j++) {
+                    if (arr[i] > arr[j]) {
+
+                        yoo = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = yoo;
+                    }
+                } 
+            }
+            for (int i = 0; i < arr.Length; i++) {
+                Console.WriteLine(arr[i]);
+            }
+           
+        
+
             Console.ReadKey();
+             
+            //    Задание 4.3.13
+
+            var arr = new int[] { 5, 6, 9, 1, 2, 390, 4 };
+            int sum = arr.Sum();
+            Console.WriteLine(sum);
+            */
+
+
+            int[][] array = new int[3][];
+
+            array[0] = new int[2] { 1, 2 };
+            array[1] = new int[3] { 1, 2, 3 };
+            array[2] = new int[5] { 1, 2, 3, 4, 5 };
+
+            foreach (var num in array)
+            {
+                foreach (var item in num)
+                {
+                    Console.Write(item + " ");
+                }
+            }
+
         }
+        
 
     }
 }
