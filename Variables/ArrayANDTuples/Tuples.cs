@@ -13,7 +13,7 @@ using VariableS;
 
 namespace VariableS
 {
-    public class Tuplesj
+    public class Tuples
     {
 
         public void Tup()
@@ -74,40 +74,42 @@ namespace VariableS
             //Требуется сохранять информацию: об имени пользователя, фамилии, логине, длине логина, наличии/отсутствии у пользователя питомца, возрасте пользователя, трех любимых цветах пользователя.
 
             (string Name, string SurName, string UserLogin, int LoginLength, bool HasPet, double Age, string[] UserColor) Anketa; //4.5.1
-
-            Console.WriteLine("Введите имя: "); //4.5.2
-            Anketa.Name = Console.ReadLine();
-            Console.WriteLine("Введите фамилию: ");
-            Anketa.SurName = Console.ReadLine();
-            Console.WriteLine("Введите логин: ");
-            Anketa.UserLogin = Console.ReadLine();
-
-            Anketa.LoginLength = Anketa.UserLogin.Length; //4.5.3
-
-            Console.WriteLine("Есть ли у вас животные? Да или Нет");//4.5.4
-            var result = Console.ReadLine();
-            if (result == "Да")
+            for (int p = 0; p < 3; p++)
             {
-                Anketa.HasPet = true;
+
+                Console.WriteLine("Введите имя: "); //4.5.2
+                Anketa.Name = Console.ReadLine();
+                Console.WriteLine("Введите фамилию: ");
+                Anketa.SurName = Console.ReadLine();
+                Console.WriteLine("Введите логин: ");
+                Anketa.UserLogin = Console.ReadLine();
+
+                Anketa.LoginLength = Anketa.UserLogin.Length; //4.5.3
+
+                Console.WriteLine("Есть ли у вас животные? Да или Нет");//4.5.4
+                var result = Console.ReadLine();
+                if (result == "Да")
+                {
+                    Anketa.HasPet = true;
+                }
+                else
+                {
+                    Anketa.HasPet = false;
+                }
+
+                Console.WriteLine("Введите возраст пользователя");//4.5.5
+                Anketa.Age = double.Parse(Console.ReadLine());
+                Anketa.UserColor = new string[3];
+                Console.WriteLine("Введите три любимых цвета пользователя");
+                for (int i = 0; i < Anketa.UserColor.Length; i++)
+                {
+                    Anketa.UserColor[i] = Console.ReadLine();
+                }
+                Console.WriteLine("Ваше Имя {0} Ваша Фамилия {1} Ваш Логин {2} Длина Логина {3} У вас есть животное? {4} Ваш возраст {5} Ваши цвета {6}", Anketa.Name, Anketa.SurName, Anketa.UserLogin, Anketa.LoginLength, Anketa.HasPet, Anketa.Age, Anketa.UserColor);
+                Console.ReadKey();
+
+
             }
-            else
-            {
-                Anketa.HasPet = false;
-            }
-
-            Console.WriteLine("Введите возраст пользователя");//4.5.5
-            Anketa.Age = double.Parse(Console.ReadLine());
-            Anketa.UserColor = new string[3];
-            Console.WriteLine("Введите три любимых цвета пользователя");
-            for (int i = 0; i < Anketa.UserColor.Length; i++)
-            {
-                Anketa.UserColor[i] = Console.ReadLine();
-            }
-            Console.WriteLine("Ваше Имя {0} Ваша Фамилия {1} Ваш Логин {2} Длина Логина {3} У вас есть животное? {4} Ваш возраст {5} Ваши цвета {6}", Anketa.Name, Anketa.SurName, Anketa.UserLogin, Anketa.LoginLength, Anketa.HasPet, Anketa.Age, Anketa.UserColor);
-            Console.ReadKey();
-
-
-
 
 
 

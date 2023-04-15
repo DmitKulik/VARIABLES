@@ -11,10 +11,10 @@ namespace VariableS{
 
         static void Main(){
             
-            Tuplesj TupJob = new Tuplesj();
+            Tuples TupJob = new Tuples();
             TupJob.Tup();
 
-            Class4Blok blok = new Class4Blok();
+            Array blok = new Array();
             blok.Blok();
 
             /*string _myName = "Dima";

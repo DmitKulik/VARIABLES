@@ -13,7 +13,7 @@ using VariableS;
 namespace VariableS
 {
 
-    public class Class4Blok
+    public class Array
     {
 
 
