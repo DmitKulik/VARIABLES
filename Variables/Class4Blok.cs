@@ -8,61 +8,66 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
+using VariableS;
 
-namespace VariableS {
-    public class Class4Blok {
+namespace VariableS
+{
 
-
-        public void Blok(){
-
-            //Задание 4.1.4
-            string A = "dom";
-            string B = "dip";
-            bool C = A != B;
-
-            //Задание 4.1.5
-
-            int AA = 1;
-            int BB = 0;
-            double XX = 44;
-            double YY = 3;
-            bool CC = (AA < BB) | (XX > YY);
+    public class Class4Blok
+    {
 
 
-            //Задание 4.1.10
-            var inv = true;
-            var result = !inv;
+        public void Blok()
+        {
 
-            //Console.WriteLine("result = {0}", result);
-            //Console.ReadKey();
+            /*  //Задание 4.1.4
+              string A = "dom";
+              string B = "dip";
+              bool C = A != B;
 
-            var a = 6;
-            var b = 7;
+              //Задание 4.1.5
 
-            var color = Console.ReadLine();
+              int AA = 1;
+              int BB = 0;
+              double XX = 44;
+              double YY = 3;
+              bool CC = (AA < BB) | (XX > YY);
 
-            /*  if (color == "red") {
 
-                  Console.BackgroundColor = ConsoleColor.Red;
-                  Console.ForegroundColor = ConsoleColor.Black;
+              //Задание 4.1.10
+              var inv = true;
+              var result = !inv;
 
-                  Console.WriteLine("Your color is red!");
-              }
+              //Console.WriteLine("result = {0}", result);
+              //Console.ReadKey();
 
-              else if (color == "green") {
+              var a = 6;
+              var b = 7;
 
-                  Console.BackgroundColor = ConsoleColor.Green;
-                  Console.ForegroundColor = ConsoleColor.Black;
+              var color = Console.ReadLine();
 
-                  Console.WriteLine("Your color is green!");
-              }
-              else {
-                  Console.BackgroundColor = ConsoleColor.Cyan;
-                  Console.ForegroundColor = ConsoleColor.Black;
+              *//*  if (color == "red") {
 
-                  Console.WriteLine("Your color is cyan!");
-              }
-            */
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is red!");
+                }
+
+                else if (color == "green") {
+
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is green!");
+                }
+                else {
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is cyan!");
+                }
+              */
             /*
               switch (color) { //Задание Задание 4.1.17
 
@@ -201,7 +206,7 @@ namespace VariableS {
                     Console.Write(name[k, i] + " ");
 
                 Console.WriteLine();
-            }// тут важно указать имя массива иначе возьмет индексы
+            }
 
             //Console.WriteLine("Первая буква вашего имени: {0}", name[0]);
            
@@ -232,7 +237,7 @@ namespace VariableS {
             var arr = new int[] { 5, 6, 9, 1, 2, 390, 4 };
             int sum = arr.Sum();
             Console.WriteLine(sum);
-            */
+            
 
 
             int[][] array = new int[3][];
@@ -248,9 +253,118 @@ namespace VariableS {
                     Console.Write(item + " ");
                 }
             }
+            
+
+
+            //Задание 4.3.14
+
+            int[][] array = new int[3][];
+
+            array[0] = new int[2] { 1, 2 };
+            array[1] = new int[3] { 1, 2, 3 };
+            array[2] = new int[5] { 1, 2, 3, 4, 5 };
+
+            foreach (var y in array)
+            {
+                foreach (var x in y)
+                {
+                    Console.Write(x + " ");
+
+                }
+
+            }
+            
+            //Console.Write(array[y] + " ");// тут важно указать имя массива иначе возьмет индексы
+            //Console.WriteLine("Первая буква вашего имени: {0}", name[0]);
+
+
+            // Задание 4.3.15 Алгоритм, который находит в массиве количество положительных чисел и отрицательных
+
+            int count =0; // если не количество а каждый элемент, то не нужна переменная
+            var array = new int[] { 5, 6, 9, 1, -2, 9, 4 };
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < 0)
+                {
+
+                    count++;
+                    //Console.Write(array[i]); так не количество , а все положительные выведет
+                }
+            }
+            Console.Write(count);
+
+            Console.ReadKey();
+            
+
+            //Задание 4.3.16 Необходимо найти количество положительных элементов двумерного массива
+            int count = 0; // если не количество а каждый элемент, то не нужна переменная
+            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+            for (int i = 0; i <= arr.GetUpperBound(0); i++)
+            {
+                for (int p =0; p <= arr.GetUpperBound(1); p++)
+                {
+                    if (arr[i, p] > 0 )
+                    {
+                        count++;
+                        //Console.Write(array[i]); так не количество , а все положительные выведет
+                    }
+                }
+            }
+            Console.Write(count);
+
+            Console.ReadKey();
+            *//*
+
+            //Задание 4.3.17 Cортировка элементов массива внутри одной строки
+
+
+            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+            int yoo2;
+            for (int i = 0; i <= arr.GetUpperBound(0); i++)
+                for (int i = 0; i <= arr.GetUpperBound(0); i++)
+                {
+                    for (int j = 0; j <= arr.GetUpperBound(1); j++)
+
+                        for (int k = j + 1; k <= arr.GetUpperBound(1); k++)
+
+                            if (arr[i, j] > arr[i, k])
+                            {
+                                yoo2 = arr[i, k];
+                                arr[i, k] = arr[i, j];
+                                arr[i, j] = yoo2;
+
+
+                            }
+
+                }
+            foreach (var yoo1 in arr)
+            {
+                Console.Write(yoo1);
+            }
+
+
+            Console.ReadKey();*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
-        
 
     }
 }

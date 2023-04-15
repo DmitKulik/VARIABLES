@@ -10,8 +10,12 @@ namespace VariableS{
      public class Program{
 
         static void Main(){
+            
+            Tuplesj TupJob = new Tuplesj();
+            TupJob.Tup();
+
             Class4Blok blok = new Class4Blok();
-            blok.Blok();   
+            blok.Blok();
 
             /*string _myName = "Dima";
             int _age = 10; //лучше byte
@@ -57,14 +61,7 @@ namespace VariableS{
         }
 
 
-        enum Week : int
-        {
-            Tuesday = 100,
-            Monday = 200,
-            Wednesday = 300
-
-        }
-
+        
 
 
     }
