@@ -67,7 +67,7 @@ namespace VariableS
 
             Console.WriteLine("Введите возрас питомца");
             Pet.Age = double.Parse(Console.ReadLine());
-            */
+            
 
             //Заданиz 4.5.1  4.5.2  4.5.3   4.5.4   4.5.5
             // Необходимо разработать методику анкетирования пользователей. 
@@ -108,38 +108,32 @@ namespace VariableS
                 Console.WriteLine("Ваше Имя {0} Ваша Фамилия {1} Ваш Логин {2} Длина Логина {3} У вас есть животное? {4} Ваш возраст {5} Ваши цвета {6}", Anketa.Name, Anketa.SurName, Anketa.UserLogin, Anketa.LoginLength, Anketa.HasPet, Anketa.Age, Anketa.UserColor);
                 Console.ReadKey();
 
-
-            }
-
-
-
-
-
+                */
         }
 
-        enum Week : int
-        {
-            Tuesday = 100,
-            Monday = 200,
-            Wednesday = 300
 
-        }
+
+
 
 
     }
 
-
-
-
-
-
-
-
-
-
-
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

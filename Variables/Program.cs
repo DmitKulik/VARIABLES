@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -9,13 +10,18 @@ using System.Threading.Tasks;
 namespace VariableS{
      public class Program{
 
-        static void Main(){
+        static void Main()
+        {
             
             Tuples TupJob = new Tuples();
             TupJob.Tup();
-
             Array blok = new Array();
             blok.Blok();
+            Methods methods = new Methods();
+            //methods.ShowColor();
+            var array = methods.GetArrayFromConsole();
+            methods.SortArray(array);
+            
 
             /*string _myName = "Dima";
             int _age = 10; //лучше byte
