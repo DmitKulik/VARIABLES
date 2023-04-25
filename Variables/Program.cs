@@ -11,23 +11,62 @@ using VariableS;
 
 namespace VariableS
 {
-    public class Program
+    class Program
     {
 
-        public static void Main()
+        static void Main(string[] args)
         {
 
-            Tuples TupJob = new Tuples();
+            /*Tuples TupJob = new Tuples();
             TupJob.Tup();
             Array blok = new Array();
             blok.Blok();
             Methods methods = new Methods();
             //methods.GetName();
             //methods.ShowColor();
-            //var array = methods.GetArrayFromConsole();
+            //var array = methods.GetArrayFromConsole();*/
 
 
+            static (string _Name, string _SurName, int _Age) AddUser()
+            {
 
+                (string _Name, string _SurName, int _Age) InfoUser;
+                Console.WriteLine("Ввод имени пользователя");
+                InfoUser._Name = Console.ReadLine();
+                Console.WriteLine("Ввод фамилии пользователя");
+                InfoUser._SurName = Console.ReadLine();
+                string _Age;
+                int _IntAge;
+
+                do
+                {
+                    Console.WriteLine("Ввод возраста цифрами");
+                    _Age = Console.ReadLine();
+
+                } while (CheckInt(_Age, out _IntAge));
+
+                InfoUser._Age = _IntAge;
+                return InfoUser;
+
+            }
+            static bool CheckInt(string Num, out int _CorrectN)
+            {
+                if (int.TryParse(Num, out int _IntAge))
+                {
+
+                    if (_IntAge > 0)
+                    {
+                        _CorrectN = _IntAge;
+                        return false;
+                    }
+                }
+                {
+                    _CorrectN = 0;
+                    return true;
+                }
+
+            }
+            Console.ReadKey();
 
             /*string _myName = "Dima";
             int _age = 10; //лучше byte
@@ -94,32 +133,69 @@ namespace VariableS
             Console.WriteLine(arr[0]);
             Console.ReadKey();*/
 
-            Console.WriteLine("Напишите что то");
+            /*Console.WriteLine("Напишите что то");
 
             var str = Console.ReadLine();
             Console.WriteLine("Укажите глубину эха");
             var deep = int.Parse(Console.ReadLine());
             Echo(str, deep);
-            
-            Console.ReadKey();
+
+            Console.ReadKey();*/
+
+
+
+
+
         }
 
-        static void Echo(string saidworld, int deep) {
-            //Console.WriteLine(phrase);
-            var modif = saidworld;
-            if (modif.Length > 2) {
-                modif = modif.Remove(0, 2);
-                var p = modif.Length;
-            }
-            Console.WriteLine("..." + modif);
+        /* static void Echo(string saidworld, int deep)
+         {
+             //Console.WriteLine(phrase);
+             var modif = saidworld;
+             if (modif.Length > 2)
+             {
+                 modif = modif.Remove(0, 2);
+                 var p = modif.Length;
+             }
+             Console.BackgroundColor = (ConsoleColor)deep;
+             Console.WriteLine("..." + modif);
 
-            if (deep > 1) {
-                Echo(modif, deep - 1);
+             if (deep > 1)
+             {
+                 Echo(modif, deep - 1);
+             }
+
+         }*/
+        //Задание 5.5.8
+        //Необходимо написать рекурсивный метод, который возводит введенное число N типа int в указанную степень pow типа byte
+
+        /*private static int PowerUp(int N, byte pow)
+        {
+            if (pow == 0)
+            {
+                return 1;
+            }
+            else
+            {
+
+                if (pow == 1)
+                {
+                    return N;
+
+                }
+                else
+                {
+                    return N * PowerUp(N, --pow);
+
+                }
             }
             
-        }
+        }*/
+
+
     }
 }
+
 
 
 
