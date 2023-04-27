@@ -4,8 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using VariableS;
 
@@ -27,174 +29,162 @@ namespace VariableS
             //var array = methods.GetArrayFromConsole();*/
 
 
-            static (string _Name, string _SurName, int _Age) AddUser()
+            var User = EnterUser();
+            Console.WriteLine($"\nВас зовут - {User._Name}\nВаша Фамилия - {User._SurName}\nВаш возраст - {User._Age}");
+            try
             {
-
-                (string _Name, string _SurName, int _Age) InfoUser;
-                Console.WriteLine("Ввод имени пользователя");
-                InfoUser._Name = Console.ReadLine();
-                Console.WriteLine("Ввод фамилии пользователя");
-                InfoUser._SurName = Console.ReadLine();
-                string _Age;
-                int _IntAge;
-
-                do
-                {
-                    Console.WriteLine("Ввод возраста цифрами");
-                    _Age = Console.ReadLine();
-
-                } while (CheckInt(_Age, out _IntAge));
-
-                InfoUser._Age = _IntAge;
-                return InfoUser;
-
+                Console.WriteLine("Ваших животных зовут: " + "{0}", string.Join("\n", User._PetsNames));
             }
-            static bool CheckInt(string Num, out int _CorrectN)
+            catch (Exception)
             {
-                if (int.TryParse(Num, out int _IntAge))
-                {
-
-                    if (_IntAge > 0)
-                    {
-                        _CorrectN = _IntAge;
-                        return false;
-                    }
-                }
-                {
-                    _CorrectN = 0;
-                    return true;
-                }
-
+               Console.WriteLine("Животинка отсутствует");
             }
-            Console.ReadKey();
-
-            /*string _myName = "Dima";
-            int _age = 10; //лучше byte
-            bool _pet = true;
-            double _size = 39.5;
-            string _favcolor = "Green";
-            */
-
-            // Console.WriteLine("Прочитать строку");
-            //string _str = Console.ReadLine();
-
-            //Финальная практика модуля «Анкетируем пользователей»
-            /*Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
-            Console.Write("Enter your age: ");
-            byte age = checked((byte)int.Parse(Console.ReadLine()));
-            Console.Write("You favorite day of week: ");
-            var day = (Week) int.Parse(Console.ReadLine());
-            Console.Write("Enter your birthdate: ");
-            var birthdate = DateTime.Parse(Console.ReadLine());
-            Console.WriteLine("Your name is {0} Age is {1} Favorite day is {2} and birthdate {3}", name, age, day, birthdate);
-            Console.ReadKey();*/
-
-
-            // Console.WriteLine("Имя {0},\nВозраст {1}\nЛюбимый цвет {2}", _myName, _age, _favcolor);
-
-            /*Console.WriteLine($"My name is {_myName}");
-            Console.WriteLine($"Мой возраст {_age}");
-            Console.WriteLine($"Do i have a Pet? {_pet}");
-            Console.WriteLine($"My shoe size is {_size}");
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.WriteLine("floatMin {0} ", float.MinValue);
-            Console.WriteLine("floatMax {0} ", float.MaxValue);
-            */
-
-
-            // double result3 = 10 % 3;
-            //Console.WriteLine(result3);
-
-            // Console.ReadKey();
-
-            /* int someAge = 33;
-             Console.WriteLine(someAge);
-             ChangeAge(someAge);
-             Console.WriteLine(someAge);
-             Console.ReadKey();*/
-
-
-            //Задание 5.3.3
-            //Добавьте слово ref в метод ChangeName перед именем параметра. Обратите внимание, что это слово нужно указать и в вызове метода.
-            /*var someName = "Artem";
-            Console.WriteLine(someName);
-            GetName(ref someName);
-            Console.WriteLine(someName);
-            Console.ReadKey();*/
 
 
 
-
-
-            /*var arr = new int[] { 1, 2, 3 };
-            BigDataOperation(arr);
-
-            Console.WriteLine(arr[0]);
-            Console.ReadKey();*/
-
-            /*Console.WriteLine("Напишите что то");
-
-            var str = Console.ReadLine();
-            Console.WriteLine("Укажите глубину эха");
-            var deep = int.Parse(Console.ReadLine());
-            Echo(str, deep);
-
-            Console.ReadKey();*/
-
-
-
-
+            try
+            {
+                Console.WriteLine("Ваши цвета: " + "{0}", string.Join("\n", User._ColorNames));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Вы очень серы в своем одиночестве!");
+            }
 
         }
-
-        /* static void Echo(string saidworld, int deep)
-         {
-             //Console.WriteLine(phrase);
-             var modif = saidworld;
-             if (modif.Length > 2)
-             {
-                 modif = modif.Remove(0, 2);
-                 var p = modif.Length;
-             }
-             Console.BackgroundColor = (ConsoleColor)deep;
-             Console.WriteLine("..." + modif);
-
-             if (deep > 1)
-             {
-                 Echo(modif, deep - 1);
-             }
-
-         }*/
-        //Задание 5.5.8
-        //Необходимо написать рекурсивный метод, который возводит введенное число N типа int в указанную степень pow типа byte
-
-        /*private static int PowerUp(int N, byte pow)
+        static (string _Name, string _SurName, int _Age, string[] _PetsNames, string[] _ColorNames) EnterUser()
         {
-            if (pow == 0)
+
+            (string _Name, string _SurName, int _Age, string[] _PetsNames, string[] _ColorNames) InfoUser;
+
+            
+            
+            Console.WriteLine("Ввод имени пользователя");
+            InfoUser._Name = checked((string)(Console.ReadLine()));
+
+            
+
+
+            Console.WriteLine("Ввод фамилии пользователя");
+            InfoUser._SurName = Console.ReadLine();
+            string _Age;
+            int _IntAge;
+
+            do
             {
-                return 1;
+                Console.WriteLine("Ввод возраста цифрами");
+                _Age = Console.ReadLine();
+
+            } while (CheckInt(_Age, out _IntAge));
+
+
+
+            InfoUser._Age = _IntAge;
+            InfoUser._PetsNames = MethodPets();
+            InfoUser._ColorNames = MethodColor();
+            return InfoUser;
+        }
+        static string[] MethodPets()
+        {
+            Console.WriteLine("Есть ли у вас животные?\n\n     Да или Нет");
+            var result = Console.ReadLine();
+            if (result == "Да")
+            {
+                string CountPet;
+                int intCountPet;
+                do
+                {
+                    Console.WriteLine("Сколько у вас животных?");
+                    CountPet = Console.ReadLine();
+
+                } while (CheckInt(CountPet, out intCountPet));
+
+                string[] Pet = new string[intCountPet];
+
+                for (int i = 0; i < intCountPet; i++)
+                {
+                    Console.WriteLine($"Ввод дом. животное № {i + 1}");
+                    Pet[i] = Console.ReadLine();
+                }
+                return Pet;
             }
             else
             {
-
-                if (pow == 1)
+                return null;
+            }
+        }
+        static string[] MethodColor()
+        {
+            Console.WriteLine("У вас есть любимый цвет?\n\n     Да или Нет");
+            var resultColor = Console.ReadLine();
+            if (resultColor == "Да")
+            {
+                string CountPet;
+                int intCountPet;
+                do
                 {
-                    return N;
+                    Console.WriteLine("Сколько у вас цветов, которые вам нравятся?");
+                    CountPet = Console.ReadLine();
 
+                } while (CheckInt(CountPet, out intCountPet));
+
+                string[] Pet = new string[intCountPet];
+
+                for (int i = 0; i < intCountPet; i++)
+                {
+                    Console.WriteLine($"Ввод цвета № {i + 1}");
+                    Pet[i] = Console.ReadLine();
                 }
-                else
-                {
-                    return N * PowerUp(N, --pow);
+                return Pet;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
+
+        static bool CheckInt(string Num, out int _CorrectN)
+        {
+            if (int.TryParse(Num, out int _IntAge))
+            {
+
+                if (_IntAge > 0) 
+                {
+                    _CorrectN = _IntAge;
+                    return false;
                 }
             }
-            
+            {
+                _CorrectN = 0;
+                return true;
+            }
+        }
+
+        /*static bool Checkstring(string Num1, out int _StringCorrect)
+        {
+            //string _writeString;
+            if (string.IsNullOrEmpty(Num1, out _StringCorrect))
+            {
+
+                if (_IntAge > 0)
+                {
+                    _CorrectN = _IntAge;
+                    return false;
+                }
+            }
+            {
+                _CorrectN = 0;
+                return true;
+            }
         }*/
-
-
     }
 }
+
+
+
+
+
 
 
 
