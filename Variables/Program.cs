@@ -37,7 +37,7 @@ namespace VariableS
             }
             catch (Exception)
             {
-               Console.WriteLine("Животинка отсутствует");
+                Console.WriteLine("Животинка отсутствует");
             }
 
 
@@ -54,16 +54,10 @@ namespace VariableS
         }
         static (string _Name, string _SurName, int _Age, string[] _PetsNames, string[] _ColorNames) EnterUser()
         {
-
             (string _Name, string _SurName, int _Age, string[] _PetsNames, string[] _ColorNames) InfoUser;
 
-            
-            
             Console.WriteLine("Ввод имени пользователя");
             InfoUser._Name = checked((string)(Console.ReadLine()));
-
-            
-
 
             Console.WriteLine("Ввод фамилии пользователя");
             InfoUser._SurName = Console.ReadLine();
@@ -76,8 +70,6 @@ namespace VariableS
                 _Age = Console.ReadLine();
 
             } while (CheckInt(_Age, out _IntAge));
-
-
 
             InfoUser._Age = _IntAge;
             InfoUser._PetsNames = MethodPets();
@@ -143,28 +135,9 @@ namespace VariableS
             }
         }
 
-
         static bool CheckInt(string Num, out int _CorrectN)
         {
             if (int.TryParse(Num, out int _IntAge))
-            {
-
-                if (_IntAge > 0) 
-                {
-                    _CorrectN = _IntAge;
-                    return false;
-                }
-            }
-            {
-                _CorrectN = 0;
-                return true;
-            }
-        }
-
-        /*static bool Checkstring(string Num1, out int _StringCorrect)
-        {
-            //string _writeString;
-            if (string.IsNullOrEmpty(Num1, out _StringCorrect))
             {
 
                 if (_IntAge > 0)
@@ -177,7 +150,8 @@ namespace VariableS
                 _CorrectN = 0;
                 return true;
             }
-        }*/
+        }
+      
     }
 }
 
